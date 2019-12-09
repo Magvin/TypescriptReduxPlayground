@@ -1,8 +1,8 @@
 import cuid from 'cuid';
 import { action } from 'typesafe-actions';
 
-import { TodosFilter, Todo } from './models';
-import { ADD, CHANGE_FILTER } from './constants';
+import { Todo } from './models';
+import { ADD } from './constants';
 
 export const add = (title: string) =>
   action(ADD, {
@@ -11,5 +11,3 @@ export const add = (title: string) =>
     completed: false,
   } as Todo);
 
-export const changeFilter = (filter: TodosFilter) =>
-  action(CHANGE_FILTER, filter);

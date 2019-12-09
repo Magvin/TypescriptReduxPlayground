@@ -3,6 +3,5 @@
 exports[`Todos Stories initial state should match a snapshot 1`] = `
 Object {
   "todos": Array [],
-  "todosFilter": "",
 }
 `;
