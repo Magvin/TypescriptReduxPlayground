@@ -2,7 +2,7 @@ import cuid from 'cuid';
 import { action } from 'typesafe-actions';
 
 import { Todo } from './models';
-import { ADD } from './constants';
+import { ADD, REMOVE } from './constants';
 
 export const add = (title: string) =>
   action(ADD, {
@@ -11,3 +11,7 @@ export const add = (title: string) =>
     completed: false,
   } as Todo);
 
+export const remove = (id: string) => 
+  action(REMOVE,{
+    id
+  })

@@ -3,7 +3,7 @@ import { ActionType } from 'typesafe-actions';
 
 import { Todo } from './models';
 import * as actions from './actions';
-import { ADD } from './constants';
+import { ADD, REMOVE } from './constants';
 
 export type TodosAction = ActionType<typeof actions>;
 
@@ -19,8 +19,14 @@ export default combineReducers<TodosState, TodosAction>({
     switch (action.type) {
       case ADD:
         return [...state, action.payload];
+      case REMOVE:
+        return removeTodo(state, action.payload.id)
       default:
         return state;
     }
   },
 });
+
+const removeTodo = (state:Todo[], id:string) => {
+    return state.filter(todo=> todo.id !== id);
+}

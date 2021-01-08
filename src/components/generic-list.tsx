@@ -1,5 +1,4 @@
 import * as React from 'react';
-
 export interface GenericListProps<T> {
   items: T[];
   itemRenderer: (item: T) => JSX.Element;
